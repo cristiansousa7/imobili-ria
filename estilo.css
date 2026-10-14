@@ -1,0 +1,183 @@
+/* ===== Variáveis ===== */
+:root {
+    --azul: #1d80c1;
+    --azul-escuro: #14608f;
+    --tinta: #0f2233;
+    --texto: #4b5563;
+    --ceu: #eaf4fb;
+    --linha: #dde6ee;
+    --branco: #ffffff;
+    --raio: 16px;
+}
+
+/* ===== Reset ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+img { max-width: 100%; height: auto; display: block; }
+
+body {
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif;
+    color: var(--tinta);
+    background: var(--branco);
+    line-height: 1.6;
+}
+
+a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--azul);
+    outline-offset: 3px;
+}
+
+/* ===== Estrutura ===== */
+.container { width: min(1120px, 100% - 40px); margin: 0 auto; }
+.secao { padding: 96px 0; }
+.fundo-ceu { background: var(--ceu); }
+
+h1 { font-size: clamp(38px, 5.5vw, 64px); line-height: 1.05; letter-spacing: -2px; margin-bottom: 20px; }
+h2 { font-size: clamp(28px, 3.6vw, 40px); line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px; }
+h3 { font-size: 20px; margin-bottom: 8px; }
+p { color: var(--texto); font-size: 17px; max-width: 62ch; }
+strong { color: var(--tinta); }
+
+/* ===== Botões ===== */
+.botao, .botao-contorno {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 28px;
+    border: 2px solid var(--azul);
+    border-radius: 999px;
+    transition: background-color .2s, color .2s;
+}
+.botao { color: var(--branco); background: var(--azul); }
+.botao:hover { background: var(--azul-escuro); border-color: var(--azul-escuro); }
+.botao-contorno { color: var(--azul); background: transparent; }
+.botao-contorno:hover { background: var(--azul); color: var(--branco); }
+.acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+/* ===== Barra de informações ===== */
+.barra-info { background: var(--tinta); color: #b8c4cf; font-size: 14px; padding: 10px 0; }
+.barra-info .container { display: flex; flex-wrap: wrap; gap: 6px 28px; justify-content: center; }
+.barra-info b { color: var(--branco); font-weight: 600; }
+
+/* ===== Topo ===== */
+.topo {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255, 255, 255, .92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--linha);
+}
+.topo .container { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+.topo img { height: 48px; width: auto; }
+.menu { display: flex; align-items: center; gap: 28px; }
+.link-menu { font-weight: 600; font-size: 15px; color: var(--texto); text-decoration: none; }
+.link-menu:hover { color: var(--azul); }
+.botao-menu {
+    font-weight: 700; font-size: 15px; color: var(--branco); background: var(--azul);
+    text-decoration: none; padding: 10px 22px; border-radius: 999px;
+}
+.botao-menu:hover { background: var(--azul-escuro); }
+
+/* Menu do celular, sem JavaScript */
+#abrir-menu { display: none; }
+.icone-menu { display: none; cursor: pointer; font-size: 28px; line-height: 1; color: var(--tinta); }
+
+/* ===== Hero ===== */
+.hero { padding: 72px 0 96px; }
+.hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.hero h2 { font-size: 20px; font-weight: 500; letter-spacing: 0; color: var(--azul); margin: 0; }
+.hero img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 28px; }
+
+/* ===== Sobre e Corretores ===== */
+.duas-colunas { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.duas-colunas img { width: 100%; border-radius: var(--raio); }
+.numeros { display: flex; gap: 40px; margin-top: 32px; }
+.numeros b { display: block; font-size: 40px; line-height: 1; color: var(--azul); }
+.numeros span { font-size: 14px; color: var(--texto); }
+
+/* ===== Serviços ===== */
+.cabecalho-secao { margin-bottom: 40px; }
+.lista-servicos { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.item-servico {
+    background: var(--branco);
+    border: 1px solid var(--linha);
+    border-radius: var(--raio);
+    padding: 28px 24px;
+}
+.item-servico p { font-size: 15px; }
+.item-servico h3 { color: var(--azul); }
+
+/* ===== Contato ===== */
+.mapa { width: 100%; height: 380px; border: 0; border-radius: var(--raio); margin: 8px 0 32px; }
+.escritorios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.escritorio {
+    background: var(--branco);
+    border: 1px solid var(--linha);
+    border-top: 4px solid var(--azul);
+    border-radius: var(--raio);
+    padding: 24px;
+}
+.endereco { font-size: 14px; margin-bottom: 16px; }
+.contatos { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.link-whatsapp {
+    font-size: 14px; font-weight: 700; color: var(--tinta); background: #25d366;
+    text-decoration: none; padding: 8px 16px; border-radius: 999px;
+}
+.link-whatsapp:hover { background: #1fb457; }
+.link-contato { font-size: 14px; font-weight: 600; color: var(--azul); text-decoration: none; }
+.link-contato:hover { text-decoration: underline; }
+
+/* ===== Rodapé ===== */
+.rodape { background: var(--tinta); color: #b8c4cf; padding: 64px 0 32px; }
+.rodape .container { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+.rodape img { height: 52px; width: auto; margin-bottom: 16px; }
+.rodape p { color: #b8c4cf; font-size: 15px; }
+.rodape h3 { color: var(--branco); font-size: 15px; margin-bottom: 12px; }
+.rodape ul { list-style: none; }
+.rodape li { margin-bottom: 8px; }
+.link-rodape { color: #b8c4cf; font-size: 15px; text-decoration: none; }
+.link-rodape:hover { color: var(--branco); }
+.rodape .rodape-final {
+    border-top: 1px solid #25394b; margin-top: 40px; padding-top: 24px;
+    font-size: 14px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px;
+}
+.rodape .rodape-final p { font-size: 14px; max-width: none; }
+.link-dev { color: var(--branco); font-weight: 700; text-decoration: none; }
+
+/* ===== Botão flutuante do WhatsApp ===== */
+.whatsapp-fixo {
+    position: fixed; right: 20px; bottom: 20px; z-index: 20;
+    background: #25d366; color: var(--tinta); font-weight: 700; font-size: 15px;
+    text-decoration: none; padding: 14px 22px; border-radius: 999px;
+    box-shadow: 0 6px 20px rgba(15, 34, 51, .25);
+}
+.whatsapp-fixo:hover { background: #1fb457; }
+
+/* ===== Responsivo ===== */
+@media (max-width: 900px) {
+    .secao { padding: 64px 0; }
+    .hero { padding: 40px 0 64px; }
+    .hero .container, .duas-colunas { grid-template-columns: 1fr; gap: 32px; }
+    .lista-servicos { grid-template-columns: repeat(2, 1fr); }
+    .escritorios { grid-template-columns: 1fr; }
+    .rodape .container { grid-template-columns: 1fr; }
+
+    .icone-menu { display: block; }
+    .menu {
+        display: none; position: absolute; top: 76px; left: 0; right: 0;
+        flex-direction: column; align-items: flex-start; gap: 18px;
+        background: var(--branco); padding: 24px 20px; border-bottom: 1px solid var(--linha);
+    }
+    #abrir-menu:checked ~ .menu { display: flex; }
+}
+
+@media (max-width: 520px) {
+    .lista-servicos { grid-template-columns: 1fr; }
+    .numeros { gap: 24px; }
+    .whatsapp-fixo { right: 12px; bottom: 12px; padding: 12px 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+}
